@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+      integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- tailwindcss -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="stylesheet" href="./style.css" />
+    <title>Green-Earth tailwind</title>
+  </head>
+  <body>
+    <!-- nav -->
+    <header class="bg-[#15803D]">
+      <div
+        class="container mx-auto flex justify-between items-center py-6 text-white"
+      >
+        <h1 class="btn btn-ghost text-2xl text-white">Green Earch</h1>
+
+        <div class="navbar-center hidden md:flex">
+          <ul class="flex justify-between gap-4 px-1 text-xl">
+            <li><a>About</a></li>
+            <li><a>Gallery</a></li>
+            <li><a>Plant a Tree</a></li>
+          </ul>
+        </div>
+
+        <button
+          class="font-semibold rounded-4xl text-xl px-4 py-2 bg-[#FACC15] text-[#15803D]"
+        >
+          Plant a Tree
+        </button>
+      </div>
+    </header>
+
+    <!-- hero -->
+    <section class="bg-[#CFF0DC]">
+      <div class="container mx-auto flex justify-between items-center pt-15">
+        <div class="flex-1">
+          <img class="" src="./image/hero-leaf1.png" alt="" />
+        </div>
+
+        <div class="text-center flex-2">
+          <div class="">
+            <h1 class="text-5xl font-bold">Plant a Tree, Grow a Future</h1>
+            <p class="py-4">
+              Join our mission to plant 1 million trees and make the Earth
+              greener for future <br />
+              generations.
+            </p>
+            <button
+              class="font-semibold rounded-4xl text-xl px-4 py-2 bg-[#FACC15] text-[#15803D]"
+            >
+              Get Involved
+            </button>
+          </div>
+        </div>
+
+        <div class="w-full justify-items-end flex-1">
+          <img class="" src="./image/hero-leaf2.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Choose Your Trees -->
+    <section class="bg-[#dcfce797]">
+      <div class="container mx-auto py-15">
+        <h1 class="text-center text-3xl pb-8 font-semibold">
+          Choose Your Trees
+        </h1>
+
+        <div class="flex">
+          <!-- categories -->
+          <div id="category-container" class="w-full mr-6 flex-1">
+            <h1 class="text-3xl font-bold">Categories</h1>
+            <button
+              id="all-trees"
+              onclick="loadPlants()"
+              class="text-start text-xl px-2 py-1 rounded w-full mt-2 hover:bg-[#15803D] hover:text-white active"
+            >
+              All trees
+            </button>
+          </div>
+
+          <!-- card section -->
+          <div class="flex-4">
+            <!-- skeleton -->
+            <div id="skeleton-container" class="grid grid-cols-3 gap-4 hidden">
+              <!-- Skeleton Card -->
+              <div class="shadow-2xl rounded-lg overflow-hidden animate-pulse">
+                <!-- Image -->
+                <div class="w-full h-56 bg-gray-300"></div>
+
+                <!-- Content -->
+                <div class="p-4 space-y-4">
+                  <!-- Title -->
+                  <div class="h-6 w-3/4 bg-gray-300 rounded"></div>
+
+                  <!-- Description -->
+                  <div class="space-y-2">
+                    <div class="h-4 bg-gray-300 rounded"></div>
+                    <div class="h-4 bg-gray-300 rounded"></div>
+                    <div class="h-4 w-5/6 bg-gray-300 rounded"></div>
+                  </div>
+
+                  <!-- Category & Price -->
+                  <div class="flex justify-between items-center">
+                    <div class="h-8 w-24 bg-gray-300 rounded-full"></div>
+                    <div class="h-6 w-16 bg-gray-300 rounded"></div>
+                  </div>
+
+                  <!-- Buttons -->
+                  <div class="flex gap-4">
+                    <div class="h-10 w-1/2 bg-gray-300 rounded-full"></div>
+                    <div class="h-10 w-1/2 bg-gray-300 rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="shadow-2xl rounded-lg overflow-hidden animate-pulse">
+                <div class="w-full h-56 bg-gray-300"></div>
+                <div class="p-4 space-y-4">
+                  <div class="h-6 w-3/4 bg-gray-300 rounded"></div>
+                  <div class="space-y-2">
+                    <div class="h-4 bg-gray-300 rounded"></div>
+                    <div class="h-4 bg-gray-300 rounded"></div>
+                    <div class="h-4 w-5/6 bg-gray-300 rounded"></div>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <div class="h-8 w-24 bg-gray-300 rounded-full"></div>
+                    <div class="h-6 w-16 bg-gray-300 rounded"></div>
+                  </div>
+                  <div class="flex gap-4">
+                    <div class="h-10 w-1/2 bg-gray-300 rounded-full"></div>
+                    <div class="h-10 w-1/2 bg-gray-300 rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="shadow-2xl rounded-lg overflow-hidden animate-pulse">
+                <div class="w-full h-56 bg-gray-300"></div>
+                <div class="p-4 space-y-4">
+                  <div class="h-6 w-3/4 bg-gray-300 rounded"></div>
+                  <div class="space-y-2">
+                    <div class="h-4 bg-gray-300 rounded"></div>
+                    <div class="h-4 bg-gray-300 rounded"></div>
+                    <div class="h-4 w-5/6 bg-gray-300 rounded"></div>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <div class="h-8 w-24 bg-gray-300 rounded-full"></div>
+                    <div class="h-6 w-16 bg-gray-300 rounded"></div>
+                  </div>
+                  <div class="flex gap-4">
+                    <div class="h-10 w-1/2 bg-gray-300 rounded-full"></div>
+                    <div class="h-10 w-1/2 bg-gray-300 rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="card-container" class="grid grid-cols-3 gap-4 hidden">
+              <div class="shadow-2xl">
+                <div>
+                  <img
+                    class="w-full h-56 object-cover"
+                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                    alt="Shoes"
+                  />
+                </div>
+
+                <div class="flex flex-col gap-4 p-4">
+                  <h2 class="font-semibold text-lg">Card Title</h2>
+                  <p class="h-30">
+                    A card component has a figure, a body part, and inside body
+                    there are title and actions parts.
+                  </p>
+                  <div class="flex items-center justify-between">
+                    <button
+                      class="border font-semibold px-4 rounded-full text-[#15803D] bg-[#dcfce77d]"
+                    >
+                      Fashion
+                    </button>
+                    <span class="text-lg font-bold text-[#15803D]"> ৳500 </span>
+                  </div>
+
+                  <button
+                    class="w-1/2 rounded-full py-2 font-semibold text-white bg-[#15803D] hover:bg-[#166534] card-add-btn"
+                    data-id="${plant.id}"
+                    data-plant-name="${plant.name}"
+                    data-plant-price="${plant.price}"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- your card section -->
+          <div class="bg-white ml-6 flex-1">
+            <div class="p-4 flex flex-col gap-4">
+              <h2 class="text-2xl font-bold">Your Card</h2>
+
+              <div id="your-card-container">
+                <p id="cart-placeholder" class="p-4 bg-[#dcfce77d]">
+                  No items added yet!
+                </p>
+              </div>
+
+              <div class="flex justify-between">
+                <p>Total Amount:</p>
+                <p>৳<span id="total-amound">0</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- modal-->
+    <section
+      id="modal"
+      class="flex items-center justify-center fixed inset-0 bg-black/40 backdrop-blur-xs hidden"
+    >
+      <!-- <div class="relative p-8 w-[30%] bg-white rounded-2xl shadow-2xl">
+        <div class="flex flex-col gap-2">
+          <h1 class="font-bold">Mango tree</h1>
+          <div>
+            <img
+              class="w-full h-56 object-cover"
+              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+              alt="Shoes"
+            />
+          </div>
+          <p><span class="font-bold">category: </span>fruit tree</p>
+          <p><span class="font-bold">price: </span>৳500</p>
+          <p class="h-30">
+            <span class="font-bold">description: </span>Lorem ipsum dolor sit
+            amet consectetur adipisicing elit. Aliquid esse provident quod
+            officiis optio ex quisquam sequi expedita saepe modi!
+          </p>
+        </div>
+
+        <button
+          id="close-modal"
+          class="outline-none cursor-pointer font-semibold px-4 py-1 rounded-md float-right bg-gray-100 hover:bg-gray-200"
+        >
+          Close
+        </button>
+      </div> -->
+    </section>
+
+    <!-- About the Campaign -->
+    <section class="bg-[#dcfce797]">
+      <div class="container mx-auto py-20">
+        <h1 class="text-3xl text-center font-semibold">About the Campaign</h1>
+        <div class="flex justify-between items-center gap-16 pt-10">
+          <div class="w-full flex-1">
+            <img
+              class="w-[80%] float-right shadow-2xl"
+              src="./image/about.png"
+              alt="#"
+            />
+          </div>
+          <div class="text-xl flex flex-col gap-10 flex-1">
+            <p class="">
+              Green Earth is a global tree plantation initiative dedicated to
+              fighting climate change. Since our start, we’ve planted over
+              500,000 trees worldwide. By joining our campaign, you help restore
+              forests, create habitats for wildlife, and combat global warming.
+            </p>
+            <ul class="list-disc pl-6">
+              <li>Restoration of natural habitats</li>
+              <li>Improvement of air quality</li>
+              <li>Support for local communities</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Impact -->
+    <section class="bg-[#CFF0DC]">
+      <div class="container mx-auto text-center py-15">
+        <h1 class="text-3xl text-center pr-15 font-semibold">Our Impact</h1>
+        <div class="flex justify-between p-10">
+          <div
+            class="flex flex-col gap-4 px-30 py-10 text-center rounded bg-white"
+          >
+            <h2 class="text-3xl font-bold text-[#15803D]">500K+</h2>
+            <p class="text-xl">Trees Planted</p>
+          </div>
+
+          <div
+            class="flex flex-col gap-4 px-30 py-10 text-center rounded bg-white"
+          >
+            <h2 class="text-3xl font-bold text-[#15803D]">120++</h2>
+            <p class="text-xl">Communities Involved</p>
+          </div>
+
+          <div
+            class="flex flex-col gap-4 px-30 py-10 text-center rounded bg-white"
+          >
+            <h2 class="text-3xl font-bold text-[#15803D]">30++</h2>
+            <p class="text-xl">Countries Reached</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Plant a Tree Today -->
+    <footer class="bg-[#166534]">
+      <div class="container mx-auto text-white text-center py-10">
+        <h1 class="text-3xl text-center pr-15 font-semibold">
+          Plant a Tree Today
+        </h1>
+
+        <form
+          class="flex flex-col gap-8 items-center p-10 w-[40%] mx-auto my-6 bg-[#15803D]"
+          action=""
+        >
+          <input
+            class="border bg-white text-black outline-none rounded px-4 py-2 w-full"
+            type="text"
+            placeholder="Your Name"
+          />
+          <input
+            class="border bg-white text-black outline-none rounded px-4 py-2 w-full"
+            type="text"
+            placeholder="Your Email Address"
+          />
+          <input
+            class="border bg-white text-black outline-none rounded px-4 py-2 w-full"
+            type="text"
+            placeholder="Number of Trees"
+          />
+          <button
+            class="font-semibold rounded-4xl text-xl px-4 py-2 w-full bg-[#FACC15] text-[#15803D]"
+          >
+            Donate Now
+          </button>
+        </form>
+      </div>
+      <p class="py-4 text-center text-white bg-[#14532D]">
+        © 2025 Green Earth. All Rights Reserved.
+      </p>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
